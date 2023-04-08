@@ -1,0 +1,11 @@
+ablog
+docutils==0.16
+myst_nb
+MyST-Parser
+pydata-sphinx-theme
+sphinx
+sphinx-panels
+sphinx-autobuild
+sphinxcontrib-bibtex
+sphinxext-opengraph
+hieroglyph
