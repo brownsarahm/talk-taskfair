@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; Intro to ML for Scientists 2023.04.04 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/slides.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/slides.css" type="text/css" />
+    <link rel="stylesheet" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" type="text/css" />
+    <link rel="stylesheet" href="_static/_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+    <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2023.04.04',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="None"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script type="text/javascript" src="None"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Intro to ML for Scientists 2023.04.04 documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  
+<article class="title slide level-1">
+
+<h1>Assessing Machine Learning Problems for Fairness Before Fitting”</h1>
+
+<p class="rubric">Sarah M Brown</p>
+<p class="rubric">University of Rhode Island</p>
+<p><em>joint work with Surbhi Rathore</em></p>
+
+
+
+<div class="slide-no">1</div>
+
+
+</article>
+<article class="admonition-why-fairness-in-machine-learning slide level-1">
+
+<h1>Why Fairness in Machine Learning?</h1>
+
+<ul class="simple">
+<li>COMPAS</li>
+<li>GenderShades</li>
+<li>Obermyer</li>
+</ul>
+
+
+
+<div class="slide-no">2</div>
+
+
+</article>
+<article class="admonition-algorithmic-fairness-interventions slide level-1">
+
+<h1>Algorithmic Fairness Interventions</h1>
+
+<p class="rubric">Typical approaches:</p>
+<ul class="simple">
+<li>blame the data, not my problem <!-- .element: class="fragment fade-in-then-semi-out" --></li>
+<li>repair the data (preprocessing) <!-- .element: class="fragment fade-in" --></li>
+<li>alter the learning (inprocessing) <!-- .element: class="fragment fade-in" --></li>
+<li>change how the model is used  (postprocessing) <!-- .element: class="fragment fade-in" --></li>
+</ul>
+
+
+
+<div class="slide-no">3</div>
+
+
+</article>
+<article class="admonition-an-alternative-proposal slide level-1">
+
+<h1>An Alternative Proposal </h1>
+
+<q>
+reformulate the problems that we apply AI to so that they are better suited to producing socially acceptable outcomes</q>
+
+
+
+<div class="slide-no">4</div>
+
+
+</article>
+<article class="admonition-why-reformulate slide level-1">
+
+<h1>Why reformulate?</h1>
+
+<p><img alt="obermyer overall" src="_images/obermyer_target.jpg" /></p>
+
+
+
+<div class="slide-no">5</div>
+
+
+</article>
+<article class="admonition- slide level-0">
+
+<h0></h0>
+
+<img alt="obermyer_disparity" src="_images/obermyer_disparity.jpg" />
+
+
+<div class="slide-no">6</div>
+
+
+</article>
+<article class="admonition- slide level-0">
+
+<h0></h0>
+
+<img alt="obermyer fix" src="_images/obermyer_reformulated.jpg" />
+
+
+<div class="slide-no">7</div>
+
+
+</article>
+<article class="admonition-how-do-we-know-when-to-reformulate slide level-1">
+
+<h1>How do we know when to reformulate?</h1>
+
+<p>To do this: propose computationally efficient information theoretic quantities for evaluating problem setups</p>
+
+
+
+<div class="slide-no">8</div>
+
+
+</article>
+<article class="admonition-agenda slide level-1">
+
+<h1>Agenda:</h1>
+
+<ol class="arabic simple">
+<li>Information Theory</li>
+</ol>
+<!-- (background) -->
+<ol class="arabic simple" start="2">
+<li>AI Tasks</li>
+</ol>
+<!-- (setup) -->
+<ol class="arabic simple" start="3">
+<li>Information theoretic task fairness</li>
+</ol>
+<!-- (main contribution) -->
+<ol class="arabic simple" start="4">
+<li>Experiments</li>
+</ol>
+<!-- (validation) -->
+
+
+
+<div class="slide-no">9</div>
+
+
+</article>
+<article class="admonition-information-theory slide level-1">
+
+<h1>Information Theory</h1>
+
+
+
+
+<div class="slide-no">10</div>
+
+
+</article>
+<article class="admonition-information-theory slide level-1">
+
+<h1>Information Theory</h1>
+
+<p><img alt="MI_X" src="_images/MI_X.jpg" /></p>
+
+
+
+<div class="slide-no">11</div>
+
+
+</article>
+<article class="admonition-information-theory slide level-1">
+
+<h1>Information Theory</h1>
+
+<p><img alt="MI_Y" src="_images/MI_Y.jpg" /></p>
+
+
+
+<div class="slide-no">12</div>
+
+
+</article>
+<article class="admonition-information-theory slide level-1">
+
+<h1>Information Theory</h1>
+
+<p><img alt="MI_X" src="_images/MI_highlight.jpg" /></p>
+
+
+
+<div class="slide-no">13</div>
+
+
+</article>
+<article class="admonition-information-theory slide level-1">
+
+<h1>Information Theory</h1>
+
+<p><img alt="MI_X" src="_images/MI_ML.jpg" /></p>
+
+
+
+<div class="slide-no">14</div>
+
+
+</article>
+<article class="admonition-formally slide level-1">
+
+<h1>Formally</h1>
+
+<div class="math notranslate nohighlight">
+\[\operatorname{I}(X;Y) =  \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)} \]</div>
+<div class="math notranslate nohighlight">
+\[\operatorname{I}(X;Y) = \operatorname{D_{KL}}(p(X,Y) || p(X)p(Y) ) \]</div>
+
+
+
+<div class="slide-no">15</div>
+
+
+</article>
+<article class="admonition-conditional-mi slide level-1">
+
+<h1>Conditional MI</h1>
+
+<div class="math notranslate nohighlight">
+\[\operatorname{I}(X;Y|Z) &amp;=\sum_z p(z)  \sum_{x,y} p(x,y|z) \log \frac{p(x,y|z)}{p(x|z)p(y|z)} \]</div>
+<p>Independence: <span class="math notranslate nohighlight">\(\operatorname{I}(X;Y) =  0\)</span></p>
+
+
+
+<div class="slide-no">16</div>
+
+
+</article>
+<article class="admonition-tasks-in-ai-and-ml slide level-1">
+
+<h1>Tasks in AI  and ML</h1>
+
+
+
+
+<div class="slide-no">17</div>
+
+
+</article>
+<article class="admonition-let-s-predict-concept-z slide level-1">
+
+<h1>Let’s predict concept <span class="math notranslate nohighlight">\(Z\)</span> !</h1>
+
+<p><em>idealized task</em>: a prediciton target concept, <span class="math notranslate nohighlight">\(Z\)</span></p>
+
+
+
+<div class="slide-no">18</div>
+
+
+</article>
+<article class="admonition-can-we-even-do-that-theoretically slide level-1">
+
+<h1>Can we even do that theoretically?</h1>
+
+<p>an idealized task is plausible if there exist some set of features <span class="math notranslate nohighlight">\(X^*\)</span> that can be used to for prediction</p>
+<div class="math notranslate nohighlight">
+\[ \operatorname{I}(X^*; Z) = 1- \epsilon\]</div>
+
+
+
+<div class="slide-no">19</div>
+
+
+</article>
+<article class="admonition-but-can-we-really-do-that slide level-1">
+
+<h1>But can we <em>really</em> do that?</h1>
+
+<p>a <em>realized</em> task include measurable features <span class="math notranslate nohighlight">\(X\)</span> and a measurable proxy target <span class="math notranslate nohighlight">\(Y\)</span></p>
+
+
+
+<div class="slide-no">20</div>
+
+
+</article>
+<article class="admonition-ml-tasks slide level-1">
+
+<h1>ML Tasks</h1>
+
+<ul class="simple">
+<li>Idealized task: predict <span class="math notranslate nohighlight">\(Z\)</span> (latent)</li>
+<li>Plausible Task: predict <span class="math notranslate nohighlight">\(Z\)</span> from <span class="math notranslate nohighlight">\(X^*\)</span> (possibly immeasurable or expensive)</li>
+<li>Realized task: predict <span class="math notranslate nohighlight">\(Y\)</span> (observed) from <span class="math notranslate nohighlight">\(X\)</span> (observed), interpret as <span class="math notranslate nohighlight">\(\hat(Y)\)</span> as <span class="math notranslate nohighlight">\(Z\)</span></li>
+</ul>
+
+
+
+<div class="slide-no">21</div>
+
+
+</article>
+<article class="section slide level-1">
+
+<h1>Information Theoretic Task Fairness</h1>
+
+
+
+
+<div class="slide-no">22</div>
+
+
+</article>
+<article class="admonition-classical-fairness-criteria slide level-1">
+
+<h1>Classical Fairness Criteria</h1>
+
+<ul class="simple">
+<li>Independence: <span class="math notranslate nohighlight">\(\operatorname{I}(A;\hat{Y}) = 0\)</span></li>
+<li>Separation: <span class="math notranslate nohighlight">\(\operatorname{I}(A;\hat{Y}|Y) = 0\)</span></li>
+<li>Sufficiency: <span class="math notranslate nohighlight">\(\operatorname{I}(A;Y|\hat{Y}) = 0\)</span></li>
+</ul>
+
+
+
+<div class="slide-no">23</div>
+
+
+</article>
+<article class="admonition-classical-fairness-criteria-in-realized-tasks slide level-1">
+
+<h1>Classical Fairness Criteria in Realized Tasks</h1>
+
+<ul class="simple">
+<li>Feature Independence: <span class="math notranslate nohighlight">\(\operatorname{I}(A;X) = 0\)</span></li>
+<li>Proxy Independence: <span class="math notranslate nohighlight">\(\operatorname{I}(A;Y) = 0\)</span></li>
+<li>Separation: <span class="math notranslate nohighlight">\(\operatorname{I}(A;X|Y) = 0\)</span></li>
+<li>Sufficiency: <span class="math notranslate nohighlight">\(\operatorname{I}(A;Y|X) = 0\)</span></li>
+</ul>
+
+
+
+<div class="slide-no">24</div>
+
+
+</article>
+<article class="admonition-approximations slide level-1">
+
+<h1>Approximations</h1>
+
+<p class="rubric">Informative Beyond Demographics</p>
+<div class="math notranslate nohighlight">
+\[ \operatorname{I}(Y;X) &gt; \operatorname{I}(A;X )\]</div>
+<p class="rubric">Group-wise Uniformly Informative Beyond Demographics</p>
+<div class="math notranslate nohighlight">
+\[ \operatorname{I}(Y;X|A=a) &gt; \operatorname{I}(A;X ) \forall a \in A\]</div>
+
+
+
+<div class="slide-no">25</div>
+
+
+</article>
+<article class="admonition-equality-of-information slide level-1">
+
+<h1>Equality of Information</h1>
+
+<div class="math notranslate nohighlight">
+\[ \operatorname{I}(Y;X|A=a_1) - \operatorname{I}(Y;X|A=a_2) &lt; \epsilon \]</div>
+
+
+
+<div class="slide-no">26</div>
+
+
+</article>
+<article class="admonition-estimating-distributions slide level-1">
+
+<h1>Estimating Distributions</h1>
+
+<p>In tabular data, histogram estimates of density make MI easy to calculate.</p>
+<p>Number of bins does not impact the information theory <strong>comparisons</strong></p>
+<p><em>in nondegenerate cases, in these datasets</em></p>
+
+
+
+<div class="slide-no">27</div>
+
+
+</article>
+<article class="admonition-obermeyer slide level-1">
+
+<h1>Obermeyer</h1>
+
+<p>Information gap (black vs white) is larger for costs than for Number of chronic illnesses</p>
+
+
+
+<div class="slide-no">28</div>
+
+
+</article>
+<article class="admonition-adult-reconstruction slide level-1">
+
+<h1>Adult Reconstruction</h1>
+
+<ul class="simple">
+<li>Ding et al reconstructed the Adult dataset from source</li>
+<li>many features about 70k people</li>
+<li>continuous valued income instead of &gt;50k binary</li>
+<li>they found that different binary prediction problems have different fairness</li>
+</ul>
+
+
+
+<div class="slide-no">29</div>
+
+
+</article>
+<article class="admonition-informative-beyond-demographics slide level-1">
+
+<h1>Informative beyond Demographics?</h1>
+
+<p><img alt="thresh" src="_images/mi_by_thresh_ar.png" /></p>
+
+
+
+<div class="slide-no">30</div>
+
+
+</article>
+<article class="admonition-equality-of-information slide level-1">
+
+<h1>Equality of Information?</h1>
+
+<p><img alt="eq" src="_images/mi_by_thresh_xya.png" /></p>
+
+
+
+<div class="slide-no">31</div>
+
+
+</article>
+<article class="admonition-separation slide level-1">
+
+<h1>Separation ?</h1>
+
+<p><img alt="sep" src="_images/mi_by_thresh_xay.png" /></p>
+
+
+
+<div class="slide-no">32</div>
+
+
+</article>
+<article class="admonition-what-are-the-parts-of-an-ml-problem slide level-1">
+
+<h1>What are the parts of an ML problem? </h1>
+
+<p><a class="reference external" href="https://mermaid.live/edit#pako:eNptkc-KgzAQxl9lCBTaxb6ALIUuHj2UXW_aw9RMTagmEkd2pbbPvqlxi5TNaf788s03yVWUVpKIxbm236VCx5B-Fgb86fpT5bBVkOaZQ220qY6hI7WjkrU1kH2ESpKveWZAIiO8n9wOfqIBNkfYbncwatP2DGxH2Oc1oZtQrCvrNKtmFt4H1vbs4W4EVnmLDhtict3MkJEv_rI8o47_s_e3SsLen2eW3t5encEIh3XrSOpwGas6mNtAUDkszI0wKPSqC36SHR6yT6NzxMpPeuh3LZX6PPhBobFa-ZXv9_siT6Y84WchnQrZMxeRaMg1qKX_teujXAhW1FAhYh9KdJdCFObmOezZfg2mFDG7niLRt35_SjT6d2tEfMa6o9svzpKkwQ"><img alt="" src="https://mermaid.ink/img/pako:eNptkc-KgzAQxl9lCBTaxb6ALIUuHj2UXW_aw9RMTagmEkd2pbbPvqlxi5TNaf788s03yVWUVpKIxbm236VCx5B-Fgb86fpT5bBVkOaZQ220qY6hI7WjkrU1kH2ESpKveWZAIiO8n9wOfqIBNkfYbncwatP2DGxH2Oc1oZtQrCvrNKtmFt4H1vbs4W4EVnmLDhtict3MkJEv_rI8o47_s_e3SsLen2eW3t5encEIh3XrSOpwGas6mNtAUDkszI0wKPSqC36SHR6yT6NzxMpPeuh3LZX6PPhBobFa-ZXv9_siT6Y84WchnQrZMxeRaMg1qKX_teujXAhW1FAhYh9KdJdCFObmOezZfg2mFDG7niLRt35_SjT6d2tEfMa6o9svzpKkwQ?type=png" /></a></p>
+<!-- ML flowchart -->
+
+
+
+<div class="slide-no">33</div>
+
+
+</article>
+<article class="section slide level-0">
+
+<h0></h0>
+
+<q>
+ML algorithms </q>
+<em>write</em></q>
+ other algorithms</q>
+
+
+
+<div class="slide-no">34</div>
+
+
+</article>
+<article class="admonition-in-other-words slide level-1">
+
+<h1>In other words</h1>
+
+<ul class="simple">
+<li>learning is usually estimation</li>
+<li>prediction is usually inference</li>
+</ul>
+
+
+
+<div class="slide-no">35</div>
+
+
+</article>
+<article class="section slide level-1">
+
+<h1>Questions?</h1>
+
+<p>brownsarahm&#64;uri.edu</p>
+
+
+
+<div class="slide-no">36</div>
+
+
+</article><!-- extra -->
+<!-- 
+
+`````{slide} Emphasize Evaluation
+:class: strategy
+
+```{panels}
+in Instruction
+^^^
+- Frame evaluation as competing goals
+````
+
+
+````{slide} 
+in Assignments
+^^^
+- Always require more than one metric
+- Disaggregate by group in social data
+
+```
+
+```{note}
+
+Evaluation allows students to think about problems more deeply.
+
+Fairness issues "discovered" in ML through eval
+
+It helps monitor, considering broader impact
+```
+
+````` -->
+
+</section>
+
+<section id="slide_notes">
+
+</section>
+
+  </body>
+</html>
