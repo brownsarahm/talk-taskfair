@@ -40,18 +40,18 @@
 
 ````{slide} Why reformulate?
 
-![obermyer overall](miimg/obermyer_target.jpg)
+![obermyer overall](img/obermyer_target.jpg)
 
 ````
 
 
 ````{slide} 
-![obermyer_disparity](miimg/obermyer_disparity.jpg)
+![obermyer_disparity](img/obermyer_disparity.jpg)
 ````
 
 
 ````{slide} 
-![obermyer fix](miimg/obermyer_reformulated.jpg)
+![obermyer fix](img/obermyer_reformulated.jpg)
 
 ````
 
@@ -84,28 +84,28 @@ To do this: propose computationally efficient information theoretic quantities f
 
 ````{slide} Information Theory
 
-![MI_X](miimg/MI_X.jpg)
+![MI_X](img/MI_X.jpg)
 
 ````
 
 
 ````{slide} Information Theory
 
-![MI_Y](miimg/MI_Y.jpg)
+![MI_Y](img/MI_Y.jpg)
 
 ````
 
 
 ````{slide} Information Theory
 
-![MI_X](miimg/MI_highlight.jpg)
+![MI_X](img/MI_highlight.jpg)
 
 ````
 
 
 ````{slide} Information Theory
 
-![MI_X](miimg/MI_ML.jpg)
+![MI_X](img/MI_ML.jpg)
 
 ````
 
@@ -253,14 +253,14 @@ Information gap (black vs white) is larger for costs than for Number of chronic 
 
 ````{slide} Informative beyond Demographics?
 
-![thresh](miimg/mi_by_thresh_ar.png)
+![thresh](img/mi_by_thresh_ar.png)
 
 ````
 
 
 ````{slide} Equality of Information?
 
-![eq](miimg/mi_by_thresh_xya.png)
+![eq](img/mi_by_thresh_xya.png)
 
 ````
 
@@ -268,9 +268,9 @@ Information gap (black vs white) is larger for costs than for Number of chronic 
 ````{slide} Separation ?
 
 
-![sep](miimg/mi_by_thresh_xay.png)
+![sep](img/mi_by_thresh_xay.png)
 
-
+````
 
 
 `````{slide} What are the parts of an ML problem? 
