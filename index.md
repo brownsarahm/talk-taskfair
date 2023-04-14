@@ -37,16 +37,13 @@ Obermyer et al 2019
 
 
 
-```{slide} Algorithmic Fairness Interventions
+```{bulid} Algorithmic Fairness Interventions
 
 
-
-### Typical approaches:
-
-- blame the data, not my problem .element: class="fragment fade-in-then-semi-out"  <!-- -->
-- repair the data (preprocessing) .element: class="fragment fade-in-then-semi-out" <!-- .element: class="fragment fade-in" -->
-- alter the learning (inprocessing) <!-- .element: class="fragment fade-in" -->
-- change how the model is used  (postprocessing) <!-- .element: class="fragment fade-in" -->
+- blame the data, not my problem 
+- repair the data (preprocessing) 
+- alter the learning (inprocessing) 
+- change how the model is used  (postprocessing) 
 
 
 ```
@@ -156,6 +153,7 @@ Independence: $\operatorname{I}(X;Y) =  0$
 
 
 ````{slide}  Tasks in AI  and ML
+:class: section
 
 ```{note}
 - typically hoc
@@ -193,7 +191,7 @@ a *realized* task include measurable features $X$ and a measurable proxy target 
 ````{slide} What does this look like? 
 
 Obermyer: 
-- $Z$ is who needs managed care
+- $Z$ is who needs managed care 
 - $X^*$ is a full picture of health and possibly some SES
 - $X$ is the electronic health record
 - $Y$ the datascientists chose health care expenditures
