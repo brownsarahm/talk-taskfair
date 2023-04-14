@@ -32,7 +32,7 @@ Angwin et al 2016
 
 
 ````{slide} Why Fairness in Machine Learning?
-:class: overlay
+
 
 ```{figure} img/obermyerscience.png
 
@@ -338,7 +338,9 @@ Information gap (black vs white) is larger for costs than for Number of chronic 
 
 ````
 
-````{slide}
+````{slide} Conclusion 
+
+For modestly sized tabular datasets, we have a computationally efficient technique to assess if a problem is well specified enough to admit fairness
 ```
 
 
