@@ -9,17 +9,18 @@
 
 
 
-```{slide} Why Fairness in Machine Learning?
+````{slide} Why Fairness in Machine Learning?
 
-
-![gendershades kehy resul;t](img/gendershades.png)
+```{figure} img/gendershades.png
 Boulamwini and Gebru 2018
+
 ```
+````
 
 
 
 ````{slide} Why Fairness in Machine Learning?
-
+:class: overlay
 
 <!-- ![two defendents from the ProPublica COMPAS article](img/machine_bias.jpg) -->
 ```{figure} img/machine_bias.jpg
@@ -30,18 +31,19 @@ Angwin et al 2016
 ````
 
 
-```{slide} Why Fairness in Machine Learning?
+````{slide} Why Fairness in Machine Learning?
+:class: overlay
 
-
-![article head](img/obermyerscience.png)
+```{figure} img/obermyerscience.png
 
 Obermyer et al 2019
 ```
 
+````
 
 
-```{build} Algorithmic Fairness Interventions
-
+```{slide} Algorithmic Fairness Interventions
+:class: build
 
 - blame the data, not my problem 
 - repair the data (preprocessing) 
@@ -191,9 +193,10 @@ a *realized* task include measurable features $X$ and a measurable proxy target 
 
 ````
 
-````{slide} What does this look like? 
+````{slide} Example: Obermyer
+:class: build
 
-Obermyer: 
+
 - $Z$ is who needs managed care 
 - $X^*$ is a full picture of health and possibly some SES
 - $X$ is the electronic health record
