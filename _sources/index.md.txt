@@ -273,6 +273,20 @@ $$ \operatorname{I}(Y;X|A=a_1) - \operatorname{I}(Y;X|A=a_2) < \epsilon $$
 ````
 
 
+```{slide} Feature Selection
+
+#### Non-demographic Task Relevance
+
+$$\data_{\bar{\demographics}} = \{ \data_i : \info(\data_i,\proxy) > \info(\data_i,\demographics) \}$$
+
+#### Maximally Predictive, Minimally Demographic
+
+$$ _{\bar{\demographics}} = \max_i \info(\data_{i},\proxy) \operatorname{and}\\
+    \min_i \info(\data_i,\demographics)$$ 
+
+```
+
+
 
 
 
@@ -337,6 +351,14 @@ Information gap (black vs white) is larger for costs than for Number of chronic 
 ![sep](img/mi_by_thresh_xay.png)
 
 ````
+
+
+
+````{slide} Feature Selection
+![](img/featsel.png)
+````
+
+
 
 ````{slide} Conclusion 
 
