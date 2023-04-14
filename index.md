@@ -67,22 +67,22 @@ Chen et al
 ````
 
 
-````{slide} Why reformulate?
+````{slide} More on Obermyer's result
 
-<!-- ![obermyer overall](img/obermyer_target.jpg) -->
+![obermyer overall](img/obermyer_target.jpg)
 
-```{image} img/obermyer_target.jpg
-```
+<!-- ```{image} img/obermyer_target.jpg
+``` -->
 
 ````
 
 
-````{slide} 
+````{slide} The disparity was larger on detailed measures
 ![obermyer_disparity](img/obermyer_disparity.jpg)
 ````
 
 
-````{slide} 
+````{slide} Potential Impact of Reformulation
 ![obermyer fix](img/obermyer_reformulated.jpg)
 
 ````
@@ -90,7 +90,9 @@ Chen et al
 
 ````{slide} How do we know when to reformulate?
 
-To do this: propose computationally efficient information theoretic quantities for evaluating problem setups
+```{admonition} Proposal
+computationally efficient information theoretic quantities for evaluating problem setups
+```
 
 ````
 
@@ -99,11 +101,11 @@ To do this: propose computationally efficient information theoretic quantities f
 
 1. Information Theory
 <!-- (background) -->
-2. AI Tasks
+2. AI Task Formalization
 <!-- (setup) -->
 3. Information theoretic task fairness
 <!-- (main contribution) -->
-4. Experiments
+4. Experimental Results
 <!-- (validation) -->
 
 ````
@@ -156,7 +158,7 @@ $$\operatorname{I}(X;Y) = \operatorname{D_{KL}}(p(X,Y) || p(X)p(Y) ) $$
 $$\operatorname{I}(X;Y|Z) &=\sum_z p(z)  \sum_{x,y} p(x,y|z) \log \frac{p(x,y|z)}{p(x|z)p(y|z)} $$
 
 
-Independence: $\operatorname{I}(X;Y) =  0$
+<!-- Independence: $\operatorname{I}(X;Y) =  0$ -->
 
 
 
