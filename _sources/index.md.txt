@@ -69,7 +69,10 @@ Chen et al
 
 ````{slide} Why reformulate?
 
-![obermyer overall](img/obermyer_target.jpg)
+<!-- ![obermyer overall](img/obermyer_target.jpg) -->
+
+```{image} img/obermyer_target.jpg
+```
 
 ````
 
