@@ -40,7 +40,7 @@ Obermyer et al 2019
 
 
 
-```{bulid} Algorithmic Fairness Interventions
+```{build} Algorithmic Fairness Interventions
 
 
 - blame the data, not my problem 
