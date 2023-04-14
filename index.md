@@ -219,7 +219,12 @@ a *realized* task include measurable features $X$ and a measurable proxy target 
 - Plausible Task: predict $Z$ from $X^*$ (possibly immeasurable or expensive)
 - Realized task: predict $Y$ (observed) from $X$ (observed), interpret as $\hat(Y)$ as $Z$
 
+
+> realized task is somethign we can **choose** and manipulate, but most 
+ML research considers the dataset (and therefore the task) fixed
 ````
+
+
 
 
 ````{slide} Information Theoretic Task Fairness
