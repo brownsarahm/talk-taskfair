@@ -18,13 +18,16 @@ Boulamwini and Gebru 2018
 
 
 
-```{slide} Why Fairness in Machine Learning?
+````{slide} Why Fairness in Machine Learning?
 
 
-![two defendents from the ProPublica COMPAS article](img/machine_bias.jpg)
+<!-- ![two defendents from the ProPublica COMPAS article](img/machine_bias.jpg) -->
+```{figure} img/machine_bias.jpg
+:class: fill
 
 Angwin et al 2016
 ```
+````
 
 
 ```{slide} Why Fairness in Machine Learning?
