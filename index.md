@@ -1,4 +1,4 @@
-```{slide} Assessing Machine Learning Problems for Fairness Before Fitting"
+```{slide} Assessing Machine Learning Problems for Fairness Before Fitting
 :class: title
 
 ### Sarah M Brown
@@ -7,12 +7,32 @@
 
 ```
 
+
+
 ```{slide} Why Fairness in Machine Learning?
 
-- COMPAS
-- GenderShades
-- Obermyer
 
+![gendershades kehy resul;t](img/gendershades.png)
+Boulamwini and Gebru 2018
+```
+
+
+
+```{slide} Why Fairness in Machine Learning?
+
+
+![two defendents from the ProPublica COMPAS article](img/machine_bias.jpg)
+
+Angwin et al 2016
+```
+
+
+```{slide} Why Fairness in Machine Learning?
+
+
+![article head](img/obermyerscience.png)
+
+Obermyer et al 2019
 ```
 
 
@@ -23,19 +43,23 @@
 
 ### Typical approaches:
 
-- blame the data, not my problem <!-- .element: class="fragment fade-in-then-semi-out" -->
-- repair the data (preprocessing) <!-- .element: class="fragment fade-in" -->
+- blame the data, not my problem .element: class="fragment fade-in-then-semi-out"  <!-- -->
+- repair the data (preprocessing) .element: class="fragment fade-in-then-semi-out" <!-- .element: class="fragment fade-in" -->
 - alter the learning (inprocessing) <!-- .element: class="fragment fade-in" -->
 - change how the model is used  (postprocessing) <!-- .element: class="fragment fade-in" -->
 
 
 ```
 
-```{slide} An Alternative Proposal 
+````{slide} An Alternative Proposal 
 
 > reformulate the problems that we apply AI to so that they are better suited to producing socially acceptable outcomes
 
+```{note}
+Passi et al 2019
+Chen et al
 ```
+````
 
 
 ````{slide} Why reformulate?
@@ -77,7 +101,7 @@ To do this: propose computationally efficient information theoretic quantities f
 ````
 
 
-````{slide} Information Theory
+````{slide} Why Information Theory
 
 ````
 
@@ -133,6 +157,11 @@ Independence: $\operatorname{I}(X;Y) =  0$
 
 ````{slide}  Tasks in AI  and ML
 
+```{note}
+- typically hoc
+- hard to apply a formal technique
+- lets formalize
+```
 
 ````
 
@@ -158,6 +187,16 @@ $$ \operatorname{I}(X^*; Z) = 1- \epsilon$$
 ````{slide} But can we *really* do that?
 
 a *realized* task include measurable features $X$ and a measurable proxy target $Y$
+
+````
+
+````{slide} What does this look like? 
+
+Obermyer: 
+- $Z$ is who needs managed care
+- $X^*$ is a full picture of health and possibly some SES
+- $X$ is the electronic health record
+- $Y$ the datascientists chose health care expenditures
 
 ````
 
