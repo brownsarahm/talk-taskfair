@@ -43,7 +43,7 @@ Obermyer et al 2019
 
 
 ```{slide} Algorithmic Fairness Interventions
-:class: build
+
 
 - blame the data, not my problem 
 
@@ -52,7 +52,7 @@ Obermyer et al 2019
 - alter the learning (inprocessing) 
 
 - change how the model is used  (postprocessing) 
-
+:class: build
 
 ```
 
