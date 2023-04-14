@@ -46,8 +46,11 @@ Obermyer et al 2019
 :class: build
 
 - blame the data, not my problem 
+
 - repair the data (preprocessing) 
+
 - alter the learning (inprocessing) 
+
 - change how the model is used  (postprocessing) 
 
 
