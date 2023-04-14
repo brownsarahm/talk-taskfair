@@ -1,6 +1,6 @@
 .layout-regular > article.current {
   width:84%;
-  height:85%%;
+  height:85%;
   left:7%;
   margin-left: 0px;
 }
@@ -50,6 +50,14 @@ article.section {
 .section h1 {
   text-align:right;
   color: rgb(0, 33, 71);
+  margin-top: 250px;
+  margin-bottom: 100px;
+}
+
+/* dark blue */
+.overlay h1 {
+  text-align: right;
+  color: rgb(255,255,255);
   margin-top: 250px;
   margin-bottom: 100px;
 }
